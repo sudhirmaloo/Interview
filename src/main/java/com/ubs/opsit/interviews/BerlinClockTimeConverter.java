@@ -7,14 +7,27 @@ import com.ubs.opsit.interviews.constants.CommonConstants;
 import com.ubs.opsit.interviews.validator.TimeFormatValidator;
 import com.ubs.opsit.interviews.validator.TimeFormatValidator24Hours;
 
+/**
+ * The Class BerlinClockTimeConverter.
+ * This class will convert the 24 Hour time (HH:mm:ss) in Berlin clock representation.
+ */
 public class BerlinClockTimeConverter implements TimeConverter {
 
+	/** The time format validator. */
 	private TimeFormatValidator timeFormatValidator;
 
+	/**
+	 * Instantiates a new berlin clock time converter.
+	 */
 	public BerlinClockTimeConverter() {
 		timeFormatValidator = new TimeFormatValidator24Hours();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.ubs.opsit.interviews.TimeConverter#convertTime(java.lang.String)
+	 */
 	@Override
 	public String convertTime(String time) {
 
@@ -37,6 +50,17 @@ public class BerlinClockTimeConverter implements TimeConverter {
 		return processTime(hours, minutes, seconds);
 	}
 
+	/**
+	 * Process time.
+	 *
+	 * @param hours
+	 *            the hours
+	 * @param minutes
+	 *            the minutes
+	 * @param seconds
+	 *            the seconds
+	 * @return the string
+	 */
 	private String processTime(int hours, int minutes, int seconds) {
 
 		String row1 = calculateRowString(1, 1 - (seconds % 2), CommonConstants.YELLOW_COLOUR);
@@ -49,6 +73,17 @@ public class BerlinClockTimeConverter implements TimeConverter {
 		return String.join(CommonConstants.NEW_LINE, Arrays.asList(row1, row2, row3, row4, row5));
 	}
 
+	/**
+	 * Calculate row string.
+	 *
+	 * @param totalLights
+	 *            the total lights
+	 * @param onLights
+	 *            the on lights
+	 * @param lampColours
+	 *            the lamp colours
+	 * @return the string
+	 */
 	private String calculateRowString(int totalLights, int onLights, String lampColours) {
 
 		int offLights = totalLights - onLights;
