@@ -5,13 +5,13 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class BerlinClockTimeConverterTest {
+public class BerlinClockTest {
 
-	private BerlinClockTimeConverter timeConverter;
+	private BerlinClock timeConverter;
 
 	@Before
 	public void setup() {
-		timeConverter = new BerlinClockTimeConverter();
+		timeConverter = new BerlinClock();
 	}
 
 	@After

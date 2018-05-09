@@ -11,7 +11,7 @@ import com.ubs.opsit.interviews.validator.TimeFormatValidator24Hours;
  * The Class BerlinClockTimeConverter.
  * This class will convert the 24 Hour time (HH:mm:ss) in Berlin clock representation.
  */
-public class BerlinClockTimeConverter implements TimeConverter {
+public class BerlinClock implements TimeConverter {
 
 	/** The time format validator. */
 	private TimeFormatValidator timeFormatValidator;
@@ -19,7 +19,7 @@ public class BerlinClockTimeConverter implements TimeConverter {
 	/**
 	 * Instantiates a new berlin clock time converter.
 	 */
-	public BerlinClockTimeConverter() {
+	public BerlinClock() {
 		timeFormatValidator = new TimeFormatValidator24Hours();
 	}
 

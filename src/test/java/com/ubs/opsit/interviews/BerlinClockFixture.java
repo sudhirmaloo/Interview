@@ -21,7 +21,7 @@ public class BerlinClockFixture {
 
 	@BeforeStory
 	public void setup() {
-		berlinClock = new BerlinClockTimeConverter();
+		berlinClock = new BerlinClock();
 	}
 
 	@AfterStory
